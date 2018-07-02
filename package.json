@@ -1,0 +1,19 @@
+{
+  "name": "hot-drinks-machine",
+  "version": "1.0.0",
+  "description": "Hot drinks machine",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GiuliaTeggi/hot-drinks-machine.git"
+  },
+  "author": "Giulia Teggi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GiuliaTeggi/hot-drinks-machine/issues"
+  },
+  "homepage": "https://github.com/GiuliaTeggi/hot-drinks-machine#readme"
+}
