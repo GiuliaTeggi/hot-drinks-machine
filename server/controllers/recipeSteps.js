@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-const querystring = require('querystring');
 const { getSteps } = require('../model/queries/recipeQueries');
 
 exports.get = async (req, res) => {
