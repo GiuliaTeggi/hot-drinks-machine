@@ -1,33 +1,42 @@
 import React from 'react';
 import getData from '../../utils/fetch';
 import Options from '../Options/Options';
+import Steps from '../Steps/Steps';
 
 export default class Drinks extends React.Component {
   state = {
-    drinks: null,
+    names: null,
+    steps: null,
   }
 
   componentDidMount() {
     getData('/names')
-      .then(drinks => this.setState({ drinks }));
+      .then(names => this.setState({ names }));
   }
 
   render() {
-    const { drinks } = this.state;
+    const { names, steps } = this.state;
     return (
       <React.Fragment>
         <h2>
           Drinks section
         </h2>
-        {!drinks
-          && (
-            <h4>
-              Loading drinks...
-            </h4>
-          )}
-        {drinks
-          && <Options options={drinks} />
-        }
+        <section>
+          {!names
+            && (
+              <h4>
+                Loading drinks...
+              </h4>
+            )}
+          {names
+            && <Options options={names} />
+          }
+        </section>
+        <section>
+          {steps
+            && <Steps steps={steps} />
+          }
+        </section>
       </React.Fragment>
     );
   }
