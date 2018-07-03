@@ -26,12 +26,13 @@
     "test"
   ],
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "mongoose": "^5.1.8",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "body-parser": "^1.18.3",
-    "dotenv": "^6.0.0"
+    "react-dom": "^16.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

@@ -2,28 +2,28 @@ import React from 'react';
 import getData from '../../utils/fetch';
 import Options from '../Options/Options';
 
-export default class App extends React.Component {
+export default class Drinks extends React.Component {
   state = {
     drinks: null,
   }
 
   componentDidMount() {
     getData('/names')
-      .then(drinks => this.setState({ drinks }, () => console.log(this.state.drinks)));
+      .then(drinks => this.setState({ drinks }));
   }
 
   render() {
     const { drinks } = this.state;
     return (
       <React.Fragment>
-        <h4>
+        <h2>
           Drinks section
-        </h4>
+        </h2>
         {!drinks
           && (
-            <h3>
+            <h4>
               Loading drinks...
-            </h3>
+            </h4>
           )}
         {drinks
           && <Options options={drinks} />
