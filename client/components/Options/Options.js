@@ -21,6 +21,7 @@ const Options = (props) => {
 
 Options.propTypes = {
   options: propTypes.arrayOf(propTypes.string).isRequired,
+  select: propTypes.func.isRequired,
 };
 
 export default Options;
