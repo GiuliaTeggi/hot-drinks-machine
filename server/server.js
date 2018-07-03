@@ -3,8 +3,8 @@ const express = require('express');
 const path = require('path');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
-const dbconnection = require('./database/dbconnection/dbconnection');
-// const controllers = require('./controllers');
+const dbconnection = require('./model/database/dbconnection/dbconnection');
+const router = require('./controllers/router');
 
 
 // Create and start server
@@ -31,8 +31,8 @@ db.once('open', () => {
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, '..', 'dist')));
-// app.use(controllers);
+app.use(router);
 
 
-// Routing
+// Routing any further request
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, '..', 'dist/index.html')));

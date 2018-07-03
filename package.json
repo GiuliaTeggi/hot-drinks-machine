@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build-database": "node ./server/database/dbbuild/dbbuild.js",
+    "build-database": "node ./server/model/database/dbbuild/dbbuild.js",
     "client": "parcel ./client/index.html",
-    "start": "node ./server/index.js",
-    "dev": " nodemon ./server/index.js",
+    "start": "node ./server/server.js",
+    "dev": " nodemon ./server/server.js",
     "build": "parcel build ./client/index.html",
     "heroku-postbuild": "parcel build ./client/index.html"
   },

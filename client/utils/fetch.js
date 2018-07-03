@@ -1,15 +1,14 @@
 const checkResponse = (response) => {
   if (response.status !== 200) {
-    console.log(`Error with the request! ${response.status}`);
-    return;
+    throw new Error(`Error: getData response status ${response.status}`);
   }
-  response.json();
+  return response.json();
 };
 
 const getData = url => fetch(url)
   .then(checkResponse)
   .catch((err) => {
-    throw new Error(`getRecipes failed ${err}`);
+    throw new Error(`getData failed ${err}`);
   });
 
 export default getData;
