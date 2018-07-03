@@ -2,8 +2,8 @@ const express = require('express');
 const path = require('path');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
-const { dbConnection } = require('./database/dbconnection');
-const controllers = require('./controllers');
+const dbconnection = require('./database/dbconnection/dbconnection');
+// const controllers = require('./controllers');
 
 
 // Create and start server
@@ -17,7 +17,7 @@ app.listen(port, () => {
 });
 
 
-// Connect to database
+// Check if connection to database is successful
 const db = mongoose.connection;
 
 // eslint-disable-next-line no-console
@@ -32,7 +32,7 @@ db.once('open', () => {
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, '..', 'dist')));
-app.use(controllers);
+// app.use(controllers);
 
 
 // Routing

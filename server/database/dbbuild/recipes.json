@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Lemon Tea",
+    "steps": [
+      "Boil some water",
+      "Steep the water in the tea",
+      "Pour tea in the cup",
+      "Add lemon"
+    ]
+  },
+  {
+    "name": "Coffee",
+    "steps": [
+      "Boil some water",
+      "Brew the coffee grounds",
+      "Pour coffee in the cup",
+      "Add sugar and milk"
+    ]
+  },
+  {
+    "name": "Chocolate",
+    "steps": [
+      "Boil some water",
+      "Add drinking chocolate powder to the water",
+      "Pour chocolate in the cup"
+    ]
+  }
+]
