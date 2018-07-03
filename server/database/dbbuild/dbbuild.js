@@ -4,7 +4,6 @@ const dbconnection = require('../dbconnection/dbconnection');
 const { Recipe } = require('../model/recipeSchema');
 const recipes = require('./recipes.json');
 
-
 // IIFE to populate database with recipes
 (() => {
   Recipe
