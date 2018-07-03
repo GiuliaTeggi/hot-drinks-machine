@@ -14,6 +14,11 @@ export default class Drinks extends React.Component {
       .then(names => this.setState({ names }));
   }
 
+  handleClick = (e) => {
+    console.log("Button clicked");
+    console.log("Event target", e.target.textContent);
+  }
+
   render() {
     const { names, steps } = this.state;
     return (
@@ -29,7 +34,7 @@ export default class Drinks extends React.Component {
               </h4>
             )}
           {names
-            && <Options options={names} />
+            && <Options options={names} select={this.handleClick} />
           }
         </section>
         <section>

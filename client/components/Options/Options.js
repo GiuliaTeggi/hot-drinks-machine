@@ -2,11 +2,11 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 const Options = (props) => {
-  const { options } = props;
+  const { options, select } = props;
 
   const articles = options.map(drink => (
     <article key={drink}>
-      <button type="button">
+      <button type="button" onClick={select}>
         {drink}
       </button>
     </article>

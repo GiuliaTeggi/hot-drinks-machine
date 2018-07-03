@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 const { getNames } = require('../model/queries/recipeQueries');
 
-console.log('Recipe name reached');
 exports.get = async (req, res) => {
   try {
     const names = await getNames();
