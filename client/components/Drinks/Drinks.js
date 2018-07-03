@@ -23,10 +23,7 @@ export default class Drinks extends React.Component {
   render() {
     const { names, steps } = this.state;
     return (
-      <React.Fragment>
-        <h2>
-          Drinks section
-        </h2>
+      <section className="drinks_section">
         <section>
           {!names
             && (
@@ -43,7 +40,7 @@ export default class Drinks extends React.Component {
             && <Steps steps={steps} />
           }
         </section>
-      </React.Fragment>
+      </section>
     );
   }
 }

@@ -9,7 +9,7 @@
     "client": "parcel ./client/index.html",
     "start": "node ./server/server.js",
     "dev": "nodemon ./server/server.js",
-    "sass": "node-sass --include-path sass public/style.scss public/style.css",
+    "sass": "node-sass ./client/style.scss ./client/style.css",
     "build": "parcel build ./client/index.html",
     "heroku-postbuild": "parcel build ./client/index.html"
   },
