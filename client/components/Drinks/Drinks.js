@@ -15,8 +15,9 @@ export default class Drinks extends React.Component {
   }
 
   handleClick = (e) => {
-    console.log("Button clicked");
-    console.log("Event target", e.target.textContent);
+    const name = e.target.textContent;
+    getData(`/steps/${name}`)
+      .then(steps => this.setState({ steps }));
   }
 
   render() {
