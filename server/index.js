@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const path = require('path');
 const bodyparser = require('body-parser');
@@ -12,7 +13,6 @@ const localhost = process.env.HOST || 'localhost';
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-  // eslint-disable-next-line no-console
   console.log(`Server is running on http://${localhost}:${port}`);
 });
 
@@ -20,10 +20,9 @@ app.listen(port, () => {
 // Check if connection to database is successful
 const db = mongoose.connection;
 
-// eslint-disable-next-line no-console
+
 db.on('error', console.error.bind(console, 'Database connection error:'));
 db.once('open', () => {
-  // eslint-disable-next-line no-console
   console.log(`${db.states[db.readyState]} to mongoDB on ${db.host}:${db.port}`);
 });
 

@@ -16,7 +16,6 @@ const RecipeSchema = new mongoose.Schema(
 );
 
 // Compile schema into a model
-/* eslint new-cap: ["error", { "newIsCap": false }] */
-const RecipeModel = new mongoose.model('Recipe', RecipeSchema);
+const Recipe = mongoose.model('Recipe', RecipeSchema);
 
-module.exports = { RecipeModel };
+module.exports = { Recipe };
