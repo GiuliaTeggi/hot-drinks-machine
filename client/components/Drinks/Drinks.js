@@ -36,11 +36,11 @@ export default class Drinks extends React.Component {
           }
         </section>
         <section className="steps_section">
-          <ul>
+          <ol>
             {steps
               && <Steps steps={steps} />
             }
-          </ul>
+          </ol>
         </section>
       </section>
     );

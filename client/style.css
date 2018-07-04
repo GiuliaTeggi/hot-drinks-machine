@@ -1,6 +1,5 @@
 * {
-  margin: 0;
-  padding: 0; }
+  margin: 0; }
 
 html, body, #root {
   height: 100%; }
@@ -8,7 +7,9 @@ html, body, #root {
 body {
   background-color: #F4F4F4;
   text-align: center;
-  min-width: 350px; }
+  min-width: 350px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em; }
 
 #root {
   display: flex;
@@ -17,7 +18,8 @@ body {
   justify-content: flex-start; }
 
 h1 {
-  margin: 10% 0; }
+  margin: 10% 0;
+  color: #E7040F; }
 
 .drinks_section {
   background-color: #357EDD;
@@ -43,15 +45,18 @@ h1 {
       height: 100%;
       width: 100%;
       background-color: #F6FFFE;
-      border-color: #F6FFFE; }
+      border-color: #F6FFFE;
+      font-size: 1.2em;
+      color: #E7040F; }
 
 .steps_section {
   width: 60%;
-  padding: 1em; }
-  .steps_section ul {
+  padding: 1em;
+  color: #357EDD; }
+  .steps_section ol {
     height: 100%;
     background-color: #F6FFFE;
     border-radius: 2%; }
-    .steps_section ul li {
+    .steps_section ol li {
       min-height: 10%;
       padding: 0.5em; }
