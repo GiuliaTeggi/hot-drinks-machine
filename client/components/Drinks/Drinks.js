@@ -2,11 +2,13 @@ import React from 'react';
 import getData from '../../utils/fetch';
 import Options from '../Options/Options';
 import Steps from '../Steps/Steps';
+import Counter from '../Counter/Counter';
 
 export default class Drinks extends React.Component {
   state = {
     names: null,
     steps: null,
+    startCount: false,
   }
 
   componentDidMount() {
@@ -17,11 +19,11 @@ export default class Drinks extends React.Component {
   handleClick = (e) => {
     const name = e.target.textContent;
     getData(`/steps/${name}`)
-      .then(steps => this.setState({ steps }));
+      .then(steps => this.setState({ steps, startCount: true }));
   }
 
   render() {
-    const { names, steps } = this.state;
+    const { names, steps, startCount } = this.state;
     return (
       <section className="drinks_section">
         <section className="options_section">
@@ -36,11 +38,16 @@ export default class Drinks extends React.Component {
           }
         </section>
         <section className="steps_section">
-          <ol>
-            {steps
-              && <Steps steps={steps} />
-            }
-          </ol>
+          <section>
+            <ol>
+              {steps
+                && <Steps steps={steps} />
+              }
+            </ol>
+            <section>
+              <Counter steps={steps} start={startCount} />
+            </section>
+          </section>
         </section>
       </section>
     );

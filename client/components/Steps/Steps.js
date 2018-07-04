@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 
 export default class Steps extends React.Component {
   componentDidMount() {
-    console.log('Component mounted');
+    console.log('Steps mounted');
   }
 
   componentDidUpdate() {
@@ -15,7 +15,7 @@ export default class Steps extends React.Component {
     return (
       <React.Fragment>
         {steps.map((step, index) => (
-          <li key={index} ref={this.refs.list}>
+          <li key={index}>
             {step}
           </li>
         ))}
