@@ -11,9 +11,9 @@ const Steps = (props) => {
   ));
 
   return (
-    <ul>
+    <React.Fragment>
       {list}
-    </ul>
+    </React.Fragment>
   );
 };
 

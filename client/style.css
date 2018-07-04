@@ -30,6 +30,28 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
-  .drinks_section .options_section, .drinks_section .steps_section {
-    width: 50%;
-    padding: 2em 1em; }
+
+.options_section {
+  width: 40%;
+  padding: 2em 1em; }
+  .options_section section {
+    height: 100%; }
+  .options_section article {
+    height: 30%;
+    margin: 2%; }
+    .options_section article button {
+      height: 100%;
+      width: 100%;
+      background-color: #F6FFFE;
+      border-color: #F6FFFE; }
+
+.steps_section {
+  width: 60%;
+  padding: 1em; }
+  .steps_section ul {
+    height: 100%;
+    background-color: #F6FFFE;
+    border-radius: 2%; }
+    .steps_section ul li {
+      min-height: 10%;
+      padding: 0.5em; }

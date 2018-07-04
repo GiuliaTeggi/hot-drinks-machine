@@ -1,5 +1,6 @@
 $grey: #F4F4F4;
 $blue: #357EDD;
+$lightblue: #F6FFFE;
 
 * {
   margin:0; 
@@ -39,8 +40,42 @@ h1 {
   flex-direction: row; 
   justify-content: space-around;
 
-  & .options_section, .steps_section {
-    width: 50%; 
+}
+
+.options_section {
+    width: 40%;
     padding: 2em 1em;
+
+  & section {
+    height: 100%;
+  }
+
+  & article {
+    height: 30%; 
+    margin: 2%;
+
+    & button {
+      height: 100%; 
+      width: 100%; 
+      background-color: $lightblue;
+      border-color: $lightblue;
+
+    }
+  }
+}
+
+.steps_section {
+  width: 60%;
+  padding: 1em;
+
+  & ul {
+    height: 100%;
+    background-color: $lightblue;
+    border-radius: 2%;
+
+      & li {
+        min-height: 10%; 
+        padding: 0.5em;
+      }
   }
 }
