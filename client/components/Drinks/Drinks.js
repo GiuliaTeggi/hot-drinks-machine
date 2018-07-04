@@ -24,7 +24,7 @@ export default class Drinks extends React.Component {
     const { names, steps } = this.state;
     return (
       <section className="drinks_section">
-        <section>
+        <section className="options_section">
           {!names
             && (
               <h4>
@@ -35,7 +35,7 @@ export default class Drinks extends React.Component {
             && <Options options={names} select={this.handleClick} />
           }
         </section>
-        <section>
+        <section className="steps_section">
           {steps
             && <Steps steps={steps} />
           }

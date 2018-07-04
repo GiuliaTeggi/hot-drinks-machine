@@ -2,12 +2,19 @@
   margin: 0;
   padding: 0; }
 
-html, body {
+html, body, #root {
   height: 100%; }
 
 body {
   background-color: #F4F4F4;
-  text-align: center; }
+  text-align: center;
+  min-width: 350px; }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; }
 
 h1 {
   margin: 10% 0; }
@@ -15,7 +22,14 @@ h1 {
 .drinks_section {
   background-color: #357EDD;
   width: 80%;
+  max-width: 600px;
+  height: 50%;
   margin: 10%;
+  border: 1px solid #357EDD;
+  border-radius: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
+  .drinks_section .options_section, .drinks_section .steps_section {
+    width: 50%;
+    padding: 2em 1em; }
