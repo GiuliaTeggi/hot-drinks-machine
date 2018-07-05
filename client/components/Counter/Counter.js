@@ -3,27 +3,42 @@ import propTypes from 'prop-types';
 
 export default class Counter extends React.Component {
   state = {
-    count: null,
+    count: '',
   }
 
-  componentDidUpdate() {
-    const { count } = this.state;
-    const { start, steps } = this.props;
-    if (start === true && count !== steps.length) {
-      this.setState({ count: steps.length });
+  componentDidMount(){
+    console.log("Component mounted");
+  }
+  componentWillReceiveProps(nextProps) {
+    const { count, number } = this.state;
+    const { start, steps } = nextProps;
+    if (start === true && steps != null) {
+      console.log("Steps length", steps.length)
+      this.setState({ count: steps.length }, () => {
+        console.log("Count new", count)
+        this.countDown();
+      });
     }
   }
 
   countDown = () => {
     const { count } = this.state;
-    if (count > 0) {
-      setTimeout(() => this.setState({ count: count - 1 }), 600);
-    } else this.setState({ count: 0 });
+    let time = count;
+    // if (time === 0){
+    //   this.clear();
+    // }
+    setInterval(() => {
+      time--
+      this.setState({ count: time })}, 1000)
+  }
+
+  clear = () => {
+    clearInterval(setInterval);
+    this.setState({ count: 0 });
   }
 
   render() {
     const { count } = this.state;
-    console.log('Count', count);
     return (
       <React.Fragment>
         {

@@ -2,13 +2,6 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 export default class Steps extends React.Component {
-  componentDidMount() {
-    console.log('Steps mounted');
-  }
-
-  componentDidUpdate() {
-    console.log('Component updated');
-  }
 
   render() {
     const { steps } = this.props;
