@@ -6,9 +6,8 @@ import Counter from './Counter';
 
 export default class Drinks extends React.Component {
   state = {
-    names: null,
+    names: '',
     steps: null,
-    startCount: false,
   }
 
   componentDidMount() {

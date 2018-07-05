@@ -20,7 +20,7 @@ const Options = (props) => {
 };
 
 Options.propTypes = {
-  options: PropTypes.arrayOf(propTypes.string).isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
   select: PropTypes.func.isRequired,
 };
 
