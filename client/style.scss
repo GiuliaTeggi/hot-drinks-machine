@@ -1,11 +1,25 @@
+$font: 'Roboto', sans-serif;
 $grey: #F4F4F4;
 $blue: #357EDD;
 $lightblue: #F6FFFE;
+$red: #E7040F;
+
+@mixin medium {
+  @media screen and (min-width: 430px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: 980px) {
+    @content;
+  }
+}
+
 
 * {
   margin:0; 
-  padding: 0; 
-}
+  }
 
 html, body, #root {
   height: 100%;
@@ -15,6 +29,8 @@ body {
   background-color: $grey;
   text-align: center;
   min-width: 350px;
+  font-family: $font;
+  font-size: 1em;
 }
 
 #root {
@@ -25,24 +41,45 @@ body {
 }
 
 h1 {
-  margin: 10% 0;
+  margin-top: 10%;
+  color: $red; 
+  font-size: 1.8em;
+
+  @include medium {
+    font-size: 2em;
+  }
+
+  @include large {
+    margin-top: 5%;
+  }
+}
+
+.machine_section {
+  width:80%;
+  height: 70%;
+  max-width: 600px;
+  margin: 10%;
+
+  @include large {
+    margin: 5%;
+  }
 }
 
 .drinks_section{
   background-color: $blue;
-  width: 80%; 
-  max-width: 600px;
-  height: 50%;
-  margin: 10%;
+  width: 100%; 
+  height: 100%;
   border: 1px solid $blue;
   border-radius: 2%;
   display: flex; 
   flex-direction: row; 
   justify-content: space-around;
+  align-items: center;
 
 }
 
 .options_section {
+    height: 80%;
     width: 40%;
     padding: 2em 1em;
 
@@ -59,23 +96,52 @@ h1 {
       width: 100%; 
       background-color: $lightblue;
       border-color: $lightblue;
+      font-size: 1.2em; 
+      color: $red;
 
     }
   }
 }
 
 .steps_section {
+  height: 80%;
   width: 60%;
-  padding: 1em;
+  padding: 1em 0.5em;
+  color: $blue;
 
-  & ul {
-    height: 100%;
+  & section {
+    height: 100%; 
     background-color: $lightblue;
     border-radius: 2%;
+
+    &.counter_section {
+      height:30%;
+      font-size: 1.2em;
+      color: $red;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      @include medium {
+        height: 50%;
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  & ol {
+    height: 70%;
+
+    @include medium {
+      height:50%;
+      font-size: 1.2em;
+    }
 
       & li {
         min-height: 10%; 
         padding: 0.5em;
       }
   }
+
 }
