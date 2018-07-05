@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Options = (props) => {
   const { options, select } = props;
@@ -20,8 +20,8 @@ const Options = (props) => {
 };
 
 Options.propTypes = {
-  options: propTypes.arrayOf(propTypes.string).isRequired,
-  select: propTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  select: PropTypes.func.isRequired,
 };
 
 export default Options;
