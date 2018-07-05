@@ -1,10 +1,10 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default class Counter extends React.Component {
   state = {
     count: '',
-    total: ''
+    total: '',
   }
 
   componentWillReceiveProps(nextProps) {
@@ -20,15 +20,16 @@ export default class Counter extends React.Component {
   countUp = () => {
     const { count, total } = this.state;
     let time = count;
-      if (time < total ){
+    if (time < total) {
       this.interval = setInterval(() => {
-      time++
-      if (time === total + 1){this.clear()}
-      else this.setState({ count: time })}, 900)
-     }
-
+        time++;
+        if (time === total + 1) { this.clear(); }
+        else this.setState({ count: time })
+        ; 
+}, 900);
+    }
   }
-  
+
   clear = () => {
     clearInterval(this.interval);
     this.setState({ count: 0 });
@@ -57,3 +58,8 @@ export default class Counter extends React.Component {
     );
   }
 }
+
+Counter.propTypes = {
+  count: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+};

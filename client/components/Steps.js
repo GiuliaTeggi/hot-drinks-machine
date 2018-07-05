@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default class Steps extends React.Component {
 
@@ -18,7 +18,7 @@ export default class Steps extends React.Component {
 }
 
 Steps.propTypes = {
-  steps: propTypes.arrayOf(propTypes.string).isRequired,
+  steps: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 // export default Steps;

@@ -27,6 +27,7 @@
     "test"
   ],
   "dependencies": {
+    "babel-plugin-transform-object-assign": "^6.22.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
@@ -48,7 +49,7 @@
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-recommended": "^2.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-react": "^7.10.0",
     "jest": "^23.3.0",
     "nodemon": "^1.17.5",

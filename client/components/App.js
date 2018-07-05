@@ -1,5 +1,5 @@
 import React from 'react';
-import Drinks from './Drinks/Drinks';
+import Drinks from './Drinks';
 
 const App = () => (
   <React.Fragment>
