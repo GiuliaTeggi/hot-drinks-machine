@@ -4,18 +4,19 @@ import propTypes from 'prop-types';
 export default class Counter extends React.Component {
   state = {
     count: '',
+    ready: false
   }
 
   componentDidMount(){
     console.log("Component mounted");
   }
   componentWillReceiveProps(nextProps) {
-    const { count } = this.state;
     const { start, steps } = nextProps;
     if (start === true && steps != null) {
+      this.clear();
       console.log("Steps", steps.length)
+      const { count } = this.state;
       this.setState({ count: steps.length }, () => {
-        console.log("Count", this.state.count)
         this.countDown();
       });
     }
@@ -24,32 +25,15 @@ export default class Counter extends React.Component {
   countDown = () => {
     const { count } = this.state;
     let time = count;
-    console.log("Countdown", time)
-     // if (count === 0) { this.clear(); }
       if (time > 0){
       this.interval = setInterval(() => {
       time--
-      console.log("Time", time)
       if (time === 0){this.clear()}
       else this.setState({ count: time })}, 1000)
      }
 
   }
   
-  // countDown = () => {
-  //   const { count } = this.state;
-  //   let time = count;
-  //   console.log("Countdown", time)
-  //    if (time === 0) console.log("Zero")
-  //   // if (count === 0) { this.clear(); }
-  //    else if (time > 0){
-  //     this.interval = setInterval(() => {
-  //     time--
-  //     console.log("Time", time)
-  //     this.setState({ count: time })}, 1000)
-  //     }
-  //   }
-
   clear = () => {
     console.log("clear reached")
     clearInterval(this.interval);
