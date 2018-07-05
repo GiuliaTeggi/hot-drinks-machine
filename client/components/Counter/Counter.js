@@ -10,12 +10,12 @@ export default class Counter extends React.Component {
     console.log("Component mounted");
   }
   componentWillReceiveProps(nextProps) {
-    const { count, number } = this.state;
+    const { count } = this.state;
     const { start, steps } = nextProps;
     if (start === true && steps != null) {
-      console.log("Steps length", steps.length)
+      console.log("Steps", steps.length)
       this.setState({ count: steps.length }, () => {
-        console.log("Count new", count)
+        console.log("Count", this.state.count)
         this.countDown();
       });
     }
@@ -24,16 +24,35 @@ export default class Counter extends React.Component {
   countDown = () => {
     const { count } = this.state;
     let time = count;
-    // if (time === 0){
-    //   this.clear();
-    // }
-    setInterval(() => {
+    console.log("Countdown", time)
+     // if (count === 0) { this.clear(); }
+      if (time > 0){
+      this.interval = setInterval(() => {
       time--
-      this.setState({ count: time })}, 1000)
+      console.log("Time", time)
+      if (time === 0){this.clear()}
+      else this.setState({ count: time })}, 1000)
+     }
+
   }
+  
+  // countDown = () => {
+  //   const { count } = this.state;
+  //   let time = count;
+  //   console.log("Countdown", time)
+  //    if (time === 0) console.log("Zero")
+  //   // if (count === 0) { this.clear(); }
+  //    else if (time > 0){
+  //     this.interval = setInterval(() => {
+  //     time--
+  //     console.log("Time", time)
+  //     this.setState({ count: time })}, 1000)
+  //     }
+  //   }
 
   clear = () => {
-    clearInterval(setInterval);
+    console.log("clear reached")
+    clearInterval(this.interval);
     this.setState({ count: 0 });
   }
 
