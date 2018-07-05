@@ -25,6 +25,7 @@ export default class Drinks extends React.Component {
   render() {
     const { names, steps, startCount } = this.state;
     return (
+      <section className="machine_section">
       <section className="drinks_section">
         <section className="options_section">
           {!names
@@ -44,11 +45,12 @@ export default class Drinks extends React.Component {
                 && <Steps steps={steps} />
               }
             </ol>
-            <section>
+            <section className="counter_section">
               <Counter steps={steps} start={startCount} />
             </section>
           </section>
         </section>
+      </section>
       </section>
     );
   }

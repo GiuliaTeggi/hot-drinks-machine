@@ -24,7 +24,7 @@ export default class Counter extends React.Component {
       this.interval = setInterval(() => {
       time++
       if (time === total + 1){this.clear()}
-      else this.setState({ count: time })}, 1000)
+      else this.setState({ count: time })}, 900)
      }
 
   }
