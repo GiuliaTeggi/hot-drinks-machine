@@ -6,7 +6,6 @@ Based on the selection of the user, the web app provides a readout on the action
 ## How to run the app locally
 
 * Make sure you have [MongoDB](https://www.mongodb.com) and [Node JS](https://nodejs.org/en/) set up on your local computer.
-* Fork the repo and navigate to your local folder where you would like to store its local copy
 * Clone the repo
 `git clone https://github.com/GiuliaTeggi/hot-drinks-machine.git`
 * Add a .env file in the root directory of the  project where to store the following environment variables:
