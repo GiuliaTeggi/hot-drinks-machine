@@ -9,7 +9,7 @@ Based on the selection of the user, the web app provides a readout on the action
 * Fork the repo and navigate to your local folder where you would like to store its local copy
 * Clone the repo
 `git clone https://github.com/GiuliaTeggi/hot-drinks-machine.git`
-* Add a .env file in the root directory of the  project where to store the folloring environment variables:
+* Add a .env file in the root directory of the  project where to store the following environment variables:
 ```
 DATABASE_URL = mongodb://localhost/drinksdb
 TEST_DATABASE_URL = mongodb://localhost/drinkstestdb
