@@ -1,13 +1,12 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from 'react-testing-library';
-import fetchMock from 'fetch-mock';
 import Options from '../components/Options';
-import Steps from '../components/Options';
+import Steps from '../components/Steps';
 
 afterEach(cleanup);
 
 describe('Testing Options component', () => {
-  const { container, getByTestId, debug } = render(<Options options={['Lemon Tea', 'Coffee', 'Chocolate']} select={() => { }} />);
+  const { container } = render(<Options options={['Lemon Tea', 'Coffee', 'Chocolate']} select={() => { }} />);
   const buttons = container.querySelectorAll('button');
 
   test('Options component renders three buttons', () => {
@@ -28,37 +27,17 @@ describe('Testing Options component', () => {
     const thirdButton = buttons[2];
     expect(thirdButton.textContent).toBe('Chocolate');
   });
+});
 
-  // test('Lemon Tea button onclick event fetches recipe steps', () => {
-  //   const { container, debug } = render(<Steps steps={['Boil some water',
-  //     'Steep the water in the tea',
-  //     'Pour tea in the cup',
-  //     'Add lemon']}
-  //   />);
-  //   debug(Steps);
-
-  //   const mockResponse = [
-  //     <React.Fragment>
-  //       <li key="1">
-  //         Boil some water
-  //       </li>
-  //       <li key="2">
-  //         Steep the water in the tea
-  //       </li>
-  //       <li key="3">
-  //         Pour tea in the cup'
-  //       </li>
-  //       <li key="4">
-  //         Add lemon
-  //       </li>
-  //     </React.Fragment>,
-  //   ];
-
-  //   fetchMock.mock('/steps/Lemon%20Tea', mockResponse);
-  //   fireEvent.click(buttons[0]);
-  //   return waitForElement(() => debug(Steps));
-  //   // getByTestId('output')).then(output =>
-  //   //   expect(output.innerHTML).toEqual(mockResponse)
-  //   // }
-  // });
+describe('Testing Steps component', () => {
+  test('Displays list of steps when passed props', () => {
+    const { container } = render(
+      <Steps steps={['Boil some water',
+        'Steep the water in the tea',
+        'Pour tea in the cup',
+        'Add lemon']}
+      />,
+    );
+    expect(container.innerHTML).toBe('<li>Boil some water</li><li>Steep the water in the tea</li><li>Pour tea in the cup</li><li>Add lemon</li>');
+  });
 });
