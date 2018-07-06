@@ -18,11 +18,11 @@ export default class Drinks extends React.Component {
   handleClick = (e) => {
     const name = e.target.textContent;
     getData(`/steps/${name}`)
-      .then(steps => this.setState({ steps, startCount: true }));
+      .then(steps => this.setState({ steps }));
   }
 
   render() {
-    const { names, steps, startCount } = this.state;
+    const { names, steps } = this.state;
     return (
       <section className="machine_section">
         <section className="drinks_section">
@@ -45,7 +45,7 @@ export default class Drinks extends React.Component {
                 }
               </ol>
               <section className="counter_section">
-                <Counter steps={steps} start={startCount} />
+                <Counter steps={steps} />
               </section>
             </section>
           </section>

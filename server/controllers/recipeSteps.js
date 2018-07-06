@@ -3,7 +3,7 @@ const { getSteps } = require('../model/queries/recipeQueries');
 
 exports.get = async (req, res) => {
   const { name } = req.params;
-
+  console.log('Req', req);
   try {
     const stepsObj = await getSteps(name);
     const stepsArray = stepsObj.steps;
