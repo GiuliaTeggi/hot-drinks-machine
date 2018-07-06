@@ -1,4 +1,4 @@
-# Hot drinks machine
+# Hot drinks machine :coffee:
 
 Based on the selection of the user, the web app provides a readout on the actions performed by the machine during the preparation of the drink. When the drinks is ready, the machine displays "Your drink is ready". 
 
